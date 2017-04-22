@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "224072871820",
+    "firebase_url": "https://icms-bulgaria.firebaseio.com",
+    "project_id": "icms-bulgaria",
+    "storage_bucket": "icms-bulgaria.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:224072871820:android:d20a5a411dda611c",
+        "android_client_info": {
+          "package_name": "com.venomeye.icmsbulgaria"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "224072871820-a49uu79vvlq68634gblvklu88pfabgmb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC67rBFpSxg8JGtrO-sBf9nVt3ZHm3d8fg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
