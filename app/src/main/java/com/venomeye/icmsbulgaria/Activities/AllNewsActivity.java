@@ -14,7 +14,8 @@ import com.venomeye.icmsbulgaria.Utilities.Adapters.NewsAdapter;
 import com.parse.ParseObject;
 import com.parse.ParseQueryAdapter;
 
-        import java.util.List;
+import java.text.SimpleDateFormat;
+import java.util.List;
 public class AllNewsActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, ParseQueryAdapter.OnQueryLoadListener {
 
     private ListView mNews;
@@ -44,6 +45,11 @@ public class AllNewsActivity extends AppCompatActivity implements AdapterView.On
 
         ParseObject entry = (ParseObject) parent.getItemAtPosition(position);
         if(entry!=null){
+
+            intent.putExtra("title", entry.getString("title"));
+            intent.putExtra("content", entry.getString("content"));
+            intent.putExtra("date",new SimpleDateFormat("yyyy-MMM-dd").format(entry.getCreatedAt()).toString());
+            intent.putExtra("image", entry.getParseFile("image").getUrl());
             startActivity(intent);
         }
 
@@ -68,8 +74,6 @@ public class AllNewsActivity extends AppCompatActivity implements AdapterView.On
                 return true;
             }
         }
-
-
         return super.onOptionsItemSelected(item);
     }
 }

@@ -16,6 +16,9 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class NewsAdapter extends ParseQueryAdapter{
 
 
@@ -24,6 +27,7 @@ public class NewsAdapter extends ParseQueryAdapter{
         super(context, new ParseQueryAdapter.QueryFactory<ParseNews>() {
             public ParseQuery create() {
                 ParseQuery query = new ParseQuery("News");
+                query.orderByDescending("createdAt");
                 return query;
             }
         });
@@ -47,10 +51,10 @@ public class NewsAdapter extends ParseQueryAdapter{
         }
         TextView newsTitle = (TextView) v.findViewById(R.id.title);
         TextView newsDate = (TextView) v.findViewById(R.id.date);
-        newsTitle.setText(object.getString("title"));
-        newsDate.setText(object.getCreatedAt().toString());
-        newsTitle.setBackgroundColor(Color.argb(200,91,82,82));
-        newsDate.setBackgroundColor(Color.argb(200,91,82,82));
+        newsTitle.setText(object.getString("title"));;
+        String currentDate =
+                new SimpleDateFormat("yyyy-MMM-dd").format(object.getCreatedAt()).toString();
+        newsDate.setText(currentDate);
 
         return v;
     }
