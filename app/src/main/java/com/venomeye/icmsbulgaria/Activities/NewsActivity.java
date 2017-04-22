@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.squareup.picasso.Picasso;
 import com.venomeye.icmsbulgaria.R;
 
-public class News extends AppCompatActivity {
+public class NewsActivity extends AppCompatActivity {
 
 
     private TextView mTitleField;

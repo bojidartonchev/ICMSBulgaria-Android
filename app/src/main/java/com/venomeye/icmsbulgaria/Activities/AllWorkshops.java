@@ -11,7 +11,6 @@ import android.widget.ListView;
 import com.parse.ParseObject;
 import com.parse.ParseQueryAdapter;
 import com.venomeye.icmsbulgaria.R;
-import com.venomeye.icmsbulgaria.Utilities.Adapters.NewsAdapter;
 import com.venomeye.icmsbulgaria.Utilities.Adapters.WorkshopsAdapter;
 
 import java.text.SimpleDateFormat;
@@ -46,7 +45,7 @@ public class AllWorkshops  extends AppCompatActivity implements  AdapterView.OnI
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-        Intent intent = new Intent(getApplicationContext(), News.class);
+        Intent intent = new Intent(getApplicationContext(), NewsActivity.class);
 
         ParseObject entry = (ParseObject) parent.getItemAtPosition(position);
         if(entry!=null){
