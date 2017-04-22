@@ -11,6 +11,7 @@ import com.venomeye.icmsbulgaria.R;
 public class MainMenuActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button mNewsBtn;
+    private Button mWorkshopsBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,12 +20,17 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
 
         mNewsBtn = (Button)findViewById(R.id.news);
         mNewsBtn.setOnClickListener(this);
+        mWorkshopsBtn = (Button)findViewById(R.id.workshops);
+        mWorkshopsBtn.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         if(v.getId()==R.id.news){
             Intent intent = new Intent(this, AllNewsActivity.class);
+            startActivity(intent);
+        } else if(v.getId() == R.id.workshops){
+            Intent intent = new Intent(this, AllWorkshops.class);
             startActivity(intent);
         }
     }
