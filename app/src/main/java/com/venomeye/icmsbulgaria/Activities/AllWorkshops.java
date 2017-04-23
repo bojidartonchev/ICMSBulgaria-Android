@@ -45,15 +45,20 @@ public class AllWorkshops  extends AppCompatActivity implements  AdapterView.OnI
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-        Intent intent = new Intent(getApplicationContext(), NewsActivity.class);
+        Intent intent = new Intent(getApplicationContext(), WorkshopActivity.class);
 
         ParseObject entry = (ParseObject) parent.getItemAtPosition(position);
         if(entry!=null){
 
             intent.putExtra("title", entry.getString("title"));
             intent.putExtra("content", entry.getString("content"));
-            intent.putExtra("date",new SimpleDateFormat("yyyy-MMM-dd").format(entry.getCreatedAt()).toString());
-            intent.putExtra("image", entry.getParseFile("image").getUrl());
+            intent.putExtra("date",new SimpleDateFormat("MMM-dd-yyyy").format(entry.getDate("date")));
+            intent.putExtra("location",entry.getString("location"));
+            try {
+                intent.putExtra("image", entry.getParseFile("image").getUrl());
+            }catch(NullPointerException ex){
+
+            }
             startActivity(intent);
         }
 
