@@ -7,7 +7,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.icu.text.SimpleDateFormat;
 import android.media.RingtoneManager;
+import android.net.ParseException;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,6 +23,7 @@ import com.venomeye.icmsbulgaria.R;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Date;
 import java.util.Iterator;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
@@ -95,6 +98,12 @@ public class ParsePushCustomReceiver extends ParsePushBroadcastReceiver {
                         while (temp.hasNext()) {
                             String key = temp.next();
                             String value = extrasJson.getString(key);
+
+                            if(key.equals("date")){
+                                Long longValue = extrasJson.getLong(key);
+                                mIntent.putExtra(key,new java.text.SimpleDateFormat("yyyy-MMM-dd").format(new Date(longValue)).toString());
+                                continue;
+                            }
 
                             mIntent.putExtra(key, value);
                         }
