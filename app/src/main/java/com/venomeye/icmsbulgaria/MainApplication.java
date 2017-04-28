@@ -3,6 +3,7 @@ package com.venomeye.icmsbulgaria;
 
 import android.app.Application;
 
+import com.orm.SugarContext;
 import com.parse.Parse;
 import com.parse.ParseInstallation;
 import com.parse.ParseObject;
@@ -21,7 +22,7 @@ public class MainApplication extends Application {
                 .clientKey(getString(R.string.parse_client_key))
                 .server(getString(R.string.parse_server)).build());
 
-
+        SugarContext.init(this);
         //Facebook SDK Initialization
         //FacebookSdk.sdkInitialize(getApplicationContext());
         //AppEventsLogger.activateApp(this);
@@ -31,6 +32,12 @@ public class MainApplication extends Application {
         installation.saveInBackground();
 
     }
+
+     @Override
+    public void onTerminate() {
+         super.onTerminate();
+         SugarContext.terminate();
+     }
 
 
 }

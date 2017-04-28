@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.WindowManager;
 
+import com.venomeye.icmsbulgaria.Utilities.LocalModels.Networking;
+import com.venomeye.icmsbulgaria.Utilities.LocalModels.Program;
+
 
 public class SplashActivity extends Activity
 {
@@ -15,7 +18,8 @@ public class SplashActivity extends Activity
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         super.onCreate(savedInstanceState);
 
-
+        Program.fillDatabaseIfNeeded();
+        Networking.fillDatabaseIfNeeded();
         Intent intent = new Intent(this, MainMenuActivity.class);
         startActivity(intent);
         finish();
