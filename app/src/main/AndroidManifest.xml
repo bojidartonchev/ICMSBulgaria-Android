@@ -54,6 +54,14 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".Activities.VenuesActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".Activities.NewsActivity"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -102,6 +110,9 @@
             </intent-filter>
         </activity>
 
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCn4RpzBFuebcts3Aj7oFdR9WcxrttCbvY"/>
         <meta-data
             android:name="com.parse.push.gcm_sender_id"
             android:value="id:224072871820" />

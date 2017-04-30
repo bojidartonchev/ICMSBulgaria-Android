@@ -19,6 +19,7 @@ import java.util.List;
 public class AllWorkshops  extends AppCompatActivity implements  AdapterView.OnItemClickListener, ParseQueryAdapter.OnQueryLoadListener{
 
     private ListView mWorkshops;
+    private View mProgress;
 
     private ParseQueryAdapter mAdapter;
 
@@ -29,7 +30,7 @@ public class AllWorkshops  extends AppCompatActivity implements  AdapterView.OnI
         setContentView(R.layout.activity_workshops);
 
         mWorkshops = (ListView) findViewById(R.id.all_workshops_list_view) ;
-
+        mProgress = findViewById(R.id.progress);
         mAdapter = new WorkshopsAdapter(this);
         mAdapter.addOnQueryLoadListener(this);
         mWorkshops.setOnItemClickListener(this);
@@ -71,6 +72,7 @@ public class AllWorkshops  extends AppCompatActivity implements  AdapterView.OnI
 
     @Override
     public void onLoaded(List objects, Exception e) {
+        mProgress.setVisibility(View.GONE);
         //DialogWindowManager.dismiss();
     }
 

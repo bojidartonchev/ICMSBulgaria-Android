@@ -14,6 +14,7 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     private Button mWorkshopsBtn;
     private Button mProgramBtn;
     private Button mNetworkBtn;
+    private Button mVenuesBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,8 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         mProgramBtn.setOnClickListener(this);
         mNetworkBtn = (Button)findViewById(R.id.networking);
         mNetworkBtn.setOnClickListener(this);
+        mVenuesBtn = (Button)findViewById(R.id.venues);
+        mVenuesBtn.setOnClickListener(this);
     }
 
     @Override
@@ -43,6 +46,9 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
             startActivity(intent);
         } else if(v.getId()==R.id.networking){
             Intent intent = new Intent(this, AllNetworksActivity.class);
+            startActivity(intent);
+        } else if((v.getId()==R.id.venues)){
+            Intent intent = new Intent(this, VenuesActivity.class);
             startActivity(intent);
         }
     }
