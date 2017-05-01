@@ -2,7 +2,6 @@ package com.venomeye.icmsbulgaria.Utilities.Adapters;
 
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -17,7 +16,6 @@ import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class NewsAdapter extends ParseQueryAdapter{
 

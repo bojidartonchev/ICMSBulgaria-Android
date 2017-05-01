@@ -16,7 +16,10 @@ import com.parse.ParseQuery;
 import com.parse.ParseQueryAdapter;
 import com.venomeye.icmsbulgaria.Utilities.RoundedParseImageView;
 
+import org.w3c.dom.Text;
+
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class WorkshopsAdapter extends ParseQueryAdapter{
 
@@ -26,6 +29,7 @@ public class WorkshopsAdapter extends ParseQueryAdapter{
         super(context, new ParseQueryAdapter.QueryFactory<ParseNews>() {
             public ParseQuery create() {
                 ParseQuery query = new ParseQuery("Workshops");
+                query.orderByAscending("createdAt");
                 return query;
             }
         });
@@ -34,7 +38,8 @@ public class WorkshopsAdapter extends ParseQueryAdapter{
     @Override
     public View getItemView(final ParseObject object, View v, ViewGroup parent) {
         if (v == null) {
-            v = View.inflate(getContext(), R.layout.list_view_workshop_row, null);
+                v = View.inflate(getContext(), R.layout.list_view_workshop_row, null);
+
         }
 
         super.getItemView(object, v, parent);
@@ -47,6 +52,8 @@ public class WorkshopsAdapter extends ParseQueryAdapter{
             workshopImage.setParseFile(imageFile);
             workshopImage.loadInBackground();
         }
+        TextView workshopDate = (TextView) v.findViewById(R.id.date);
+        workshopDate.setText(new SimpleDateFormat("dd MMM").format(object.getDate("date")).toString());
         TextView workshopTitle = (TextView) v.findViewById(R.id.title);
         workshopTitle.setText(object.getString("title"));
 

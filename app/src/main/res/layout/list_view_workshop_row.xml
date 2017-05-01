@@ -10,6 +10,7 @@
         android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_margin="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="5dip"
         android:layout_marginRight="5dip"
         />
@@ -18,12 +19,21 @@
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="dsdsdsdsdssddsds"
         android:orientation="horizontal"
         android:padding="10dp"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         android:drawablePadding="10dp"
         android:layout_centerVertical="true"
-        android:layout_toRightOf="@android:id/icon"
-        android:layout_toEndOf="@android:id/icon" />
+        android:layout_toRightOf="@android:id/icon" />
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:textSize="12sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>
