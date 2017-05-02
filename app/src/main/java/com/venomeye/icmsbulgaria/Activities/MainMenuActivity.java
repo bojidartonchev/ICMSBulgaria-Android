@@ -15,6 +15,8 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
     private Button mProgramBtn;
     private Button mNetworkBtn;
     private Button mVenuesBtn;
+    private Button mSessionsBtn;
+    private Button mSpeakersBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +33,11 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         mNetworkBtn.setOnClickListener(this);
         mVenuesBtn = (Button)findViewById(R.id.venues);
         mVenuesBtn.setOnClickListener(this);
-    }
+        mSessionsBtn = (Button)findViewById(R.id.sessions);
+        mSessionsBtn.setOnClickListener(this);
+        mSpeakersBtn = (Button)findViewById(R.id.speakers);
+        mSpeakersBtn.setOnClickListener(this);
+}
 
     @Override
     public void onClick(View v) {
@@ -50,6 +56,13 @@ public class MainMenuActivity extends AppCompatActivity implements View.OnClickL
         } else if((v.getId()==R.id.venues)){
             Intent intent = new Intent(this, VenuesActivity.class);
             startActivity(intent);
+        } else if((v.getId()==R.id.sessions)){
+            Intent intent = new Intent(this, SessionsActivity.class);
+            startActivity(intent);
+        } else if((v.getId()==R.id.speakers)){
+            Intent intent = new Intent(this, AllSpeakersActivity.class);
+            startActivity(intent);
         }
+
     }
 }

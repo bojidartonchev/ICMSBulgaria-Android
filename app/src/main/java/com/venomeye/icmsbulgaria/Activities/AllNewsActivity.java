@@ -51,7 +51,6 @@ public class AllNewsActivity extends AppCompatActivity implements AdapterView.On
             intent.putExtra("image", entry.getParseFile("image").getUrl());
             startActivity(intent);
         }
-
     }
 
     @Override

@@ -7,6 +7,7 @@ import android.view.WindowManager;
 
 import com.venomeye.icmsbulgaria.Utilities.LocalModels.Networking;
 import com.venomeye.icmsbulgaria.Utilities.LocalModels.Program;
+import com.venomeye.icmsbulgaria.Utilities.LocalModels.Speakers;
 
 
 public class SplashActivity extends Activity
@@ -20,6 +21,7 @@ public class SplashActivity extends Activity
 
         Program.fillDatabaseIfNeeded();
         Networking.fillDatabaseIfNeeded();
+        Speakers.fillDatabaseIfNeeded();
         Intent intent = new Intent(this, MainMenuActivity.class);
         startActivity(intent);
         finish();
