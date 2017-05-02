@@ -20,6 +20,7 @@ public class AllNewsActivity extends AppCompatActivity implements AdapterView.On
     private ListView mNews;
 
     private ParseQueryAdapter mAdapter;
+    private View mProgress;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,7 @@ public class AllNewsActivity extends AppCompatActivity implements AdapterView.On
         setContentView(R.layout.activity_all_news);
 
         mNews = (ListView) findViewById(R.id.all_news_list_view) ;
-
+        mProgress = findViewById(R.id.progress);
         mAdapter = new NewsAdapter(this);
         mAdapter.addOnQueryLoadListener(this);
         mNews.setOnItemClickListener(this);
@@ -60,6 +61,7 @@ public class AllNewsActivity extends AppCompatActivity implements AdapterView.On
 
     @Override
     public void onLoaded(List objects, Exception e) {
+        mProgress.setVisibility(View.GONE);
         //DialogWindowManager.dismiss();
     }
 
