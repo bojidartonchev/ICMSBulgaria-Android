@@ -3,6 +3,7 @@
     <color name="colorPrimary">#86def7</color>
     <color name="colorPrimaryDark">#41c7ed</color>
     <color name="colorAccent">#0a3392</color>
+    <color name="colorAccentLight">#0a3392</color>
     <color name="backgroundColor">#93dffe</color>
 
     <color name="aliceBlue">#f0f8ff </color>

@@ -35,6 +35,7 @@ public class AllNewsActivity extends AppCompatActivity implements AdapterView.On
         mNews.setAdapter(mAdapter);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("News");
     }
 
 
