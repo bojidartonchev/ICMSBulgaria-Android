@@ -3,5 +3,43 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroundsecondary">
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="35dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="150dp"
+        android:src="@drawable/icmsbg"
+    />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:drawableLeft="@drawable/locmarker"
+        android:layout_marginBottom="10dp"
+        android:textSize="16sp"
+        android:text="1431 Bulgaria, Sofia 2 Zdrave Str."/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:drawableLeft="@drawable/phone"
+        android:layout_marginBottom="10dp"
+        android:textSize="16sp"
+        android:text=" +359 887004467"
+        android:autoLink="phone"
+        android:clickable="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:drawableLeft="@drawable/email"
+        android:layout_marginBottom="10dp"
+        android:textSize="16sp"
+        android:autoLink="email"
+        android:clickable="true"
+        android:text=" info@icmsbg.org"/>
 
 </LinearLayout>
